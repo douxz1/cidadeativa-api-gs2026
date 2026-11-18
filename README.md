@@ -39,11 +39,3 @@ Principais rotas: `/cidadaos`, `/bairros`, `/categorias`, `/ocorrencias` e `/oco
 As coleções permitem GET e POST; os registros com `/{id}` permitem GET, PUT e DELETE.
 Para reabrir uma ocorrência de RESOLVIDA para PENDENTE, informe uma justificativa em `observacao`.
 
-## Deploy
-
-No Render, crie um Web Service conectado a este repositório, usando Docker e o `Dockerfile` da raiz. Configure `DB_URL`, `DB_USER`, `DB_PASSWORD` e `CORS_ORIGINS` no ambiente do serviço. A API utiliza a variável `PORT` fornecida pelo ambiente.
-Após publicar, teste `/health` e `/categorias` e preencha a URL da API e o link do vídeo na tabela acima.
-
-## Uso de IA
-
-ChatGPT foi utilizado no apoio à criação da base da API, SQL, coleção do Insomnia e instruções. O grupo deve revisar o código e validar o funcionamento antes da entrega.
