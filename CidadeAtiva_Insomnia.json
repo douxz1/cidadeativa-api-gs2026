@@ -1,0 +1,581 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-11T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_cidadeativa",
+      "_type": "workspace",
+      "parentId": null,
+      "scope": "collection",
+      "name": "CidadeAtiva API",
+      "description": "Cadastre cidadão, bairro, categoria e ocorrência. Atualize os IDs do ambiente com os retornos."
+    },
+    {
+      "_id": "env_cidadeativa",
+      "_type": "environment",
+      "parentId": "wrk_cidadeativa",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080",
+        "cidadao_id": 1,
+        "bairro_id": 1,
+        "categoria_id": 1,
+        "ocorrencia_id": 1,
+        "atualizacao_id": 1
+      }
+    },
+    {
+      "_id": "req_cidadeativa_2",
+      "_type": "request",
+      "parentId": "wrk_cidadeativa",
+      "name": "Verificar API",
+      "method": "GET",
+      "url": "{{ _.base_url }}/health",
+      "metaSortKey": 2,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "fld_cidadeativa_3",
+      "_type": "request_group",
+      "parentId": "wrk_cidadeativa",
+      "name": "Cidadãos",
+      "metaSortKey": 3
+    },
+    {
+      "_id": "req_cidadeativa_4",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_3",
+      "name": "Cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/cidadaos",
+      "metaSortKey": 4,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Ana Silva\",\"email\":\"ana@example.org\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_5",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_3",
+      "name": "Listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/cidadaos",
+      "metaSortKey": 5,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_6",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_3",
+      "name": "Buscar por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/cidadaos/{{ _.cidadao_id }}",
+      "metaSortKey": 6,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_7",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_3",
+      "name": "Editar",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/cidadaos/{{ _.cidadao_id }}",
+      "metaSortKey": 7,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Ana Lima\",\"email\":\"ana@example.org\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_8",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_3",
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/cidadaos/{{ _.cidadao_id }}",
+      "metaSortKey": 8,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "fld_cidadeativa_9",
+      "_type": "request_group",
+      "parentId": "wrk_cidadeativa",
+      "name": "Bairros",
+      "metaSortKey": 9
+    },
+    {
+      "_id": "req_cidadeativa_10",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_9",
+      "name": "Cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/bairros",
+      "metaSortKey": 10,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Aclimação\",\"cidade\":\"São Paulo\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_11",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_9",
+      "name": "Listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/bairros",
+      "metaSortKey": 11,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_12",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_9",
+      "name": "Buscar por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/bairros/{{ _.bairro_id }}",
+      "metaSortKey": 12,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_13",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_9",
+      "name": "Editar",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/bairros/{{ _.bairro_id }}",
+      "metaSortKey": 13,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Aclimação\",\"cidade\":\"São Paulo\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_14",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_9",
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/bairros/{{ _.bairro_id }}",
+      "metaSortKey": 14,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "fld_cidadeativa_15",
+      "_type": "request_group",
+      "parentId": "wrk_cidadeativa",
+      "name": "Categorias",
+      "metaSortKey": 15
+    },
+    {
+      "_id": "req_cidadeativa_16",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_15",
+      "name": "Cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/categorias",
+      "metaSortKey": 16,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Iluminação\",\"descricao\":\"Postes e lâmpadas\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_17",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_15",
+      "name": "Listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/categorias",
+      "metaSortKey": 17,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_18",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_15",
+      "name": "Buscar por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/categorias/{{ _.categoria_id }}",
+      "metaSortKey": 18,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_19",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_15",
+      "name": "Editar",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/categorias/{{ _.categoria_id }}",
+      "metaSortKey": 19,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\":\"Iluminação pública\",\"descricao\":\"Postes e lâmpadas\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_20",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_15",
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/categorias/{{ _.categoria_id }}",
+      "metaSortKey": 20,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "fld_cidadeativa_21",
+      "_type": "request_group",
+      "parentId": "wrk_cidadeativa",
+      "name": "Ocorrências",
+      "metaSortKey": 21
+    },
+    {
+      "_id": "req_cidadeativa_22",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_21",
+      "name": "Cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/ocorrencias",
+      "metaSortKey": 22,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"cidadaoId\":{{ _.cidadao_id }},\"bairroId\":{{ _.bairro_id }},\"categoriaId\":{{ _.categoria_id }},\"descricao\":\"Poste apagado há três dias\",\"endereco\":\"Rua Exemplo, 100\",\"prioridade\":3}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_23",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_21",
+      "name": "Listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/ocorrencias",
+      "metaSortKey": 23,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_24",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_21",
+      "name": "Buscar por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}",
+      "metaSortKey": 24,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_25",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_21",
+      "name": "Editar",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}",
+      "metaSortKey": 25,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"cidadaoId\":{{ _.cidadao_id }},\"bairroId\":{{ _.bairro_id }},\"categoriaId\":{{ _.categoria_id }},\"descricao\":\"Poste apagado há quatro dias\",\"endereco\":\"Rua Exemplo, 100\",\"prioridade\":4}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_26",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_21",
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}",
+      "metaSortKey": 26,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "fld_cidadeativa_27",
+      "_type": "request_group",
+      "parentId": "wrk_cidadeativa",
+      "name": "Histórico e reabertura",
+      "metaSortKey": 27
+    },
+    {
+      "_id": "req_cidadeativa_28",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "1. Resolver ocorrência",
+      "method": "POST",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes",
+      "metaSortKey": 28,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"status\":\"RESOLVIDA\",\"observacao\":\"Lâmpada substituída.\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_29",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "2. Tentar reabrir sem justificativa — 409",
+      "method": "POST",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes",
+      "metaSortKey": 29,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"status\":\"PENDENTE\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_30",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "3. Reabrir com justificativa — 201",
+      "method": "POST",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes",
+      "metaSortKey": 30,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"status\":\"PENDENTE\",\"observacao\":\"A lâmpada voltou a apagar na noite seguinte.\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_31",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "Listar histórico",
+      "method": "GET",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes",
+      "metaSortKey": 31,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_32",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "Buscar atualização por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes/{{ _.atualizacao_id }}",
+      "metaSortKey": 32,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_cidadeativa_33",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "Editar observação",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes/{{ _.atualizacao_id }}",
+      "metaSortKey": 33,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"observacao\":\"A lâmpada apagou novamente após a troca.\"}"
+      }
+    },
+    {
+      "_id": "req_cidadeativa_34",
+      "_type": "request",
+      "parentId": "fld_cidadeativa_27",
+      "name": "Excluir atualização",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/ocorrencias/{{ _.ocorrencia_id }}/atualizacoes/{{ _.atualizacao_id }}",
+      "metaSortKey": 34,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    }
+  ]
+}
