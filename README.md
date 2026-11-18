@@ -7,7 +7,7 @@ API da **Global Solution 2026 da FIAP** para resolver problemas urbanos, como bu
 | Entrega | Preencher antes do envio |
 |---|---|
 | Integrantes, RMs e turma | Lucas José Paolillo Vasconcelos — 565561<br>Thiago Dias Gomes — 569675<br>Matheus Nogueira Quintas — 572542<br>João Arthur Maia — 573458<br>Guilherme Ribeiro — 573890 |
-| URL pública da API |   |
+| URL pública da API |  https://cidadeativa-api-gs2026.onrender.com  |
 | Vídeo não listado de até 5 minutos |  |
 ## Como rodar
 
